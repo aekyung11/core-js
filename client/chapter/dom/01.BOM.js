@@ -23,16 +23,6 @@ const { alert, confirm, prompt, setTimeout, setInterval } = window;
 
 /* Location 객체 --------------------------------------------------------- */
 // http://localhost:5500/index.html?type=listing&page=2#title
-
-const { href, protocol, host, port, search, hash, replace, reload } = location;
-
-const urlParams = new URLSearchParams(location.search);
-
-// for (const [key,value] of urlParams) {
-
-//   console.log(`${key}:${value}`);
-// }
-
 const { href, protocol, host, port, search, hash, replace, reload } = location;
 
 console.log('href', href);
@@ -77,16 +67,16 @@ const { platform, userAgent, language, onLine, geolocation } = navigator;
 //   }
 // });
 
-function getGeolocation(success) {
-  navigator.geolocation.getCurrentPosition((data) => {
-    if (data) {
-      const { latitude: lat, longitude: long } = data.coords;
-      success({ lat, long });
-    } else {
-      console.error('위치 서비스 동의 하세요');
-    }
-  });
-}
+// function getGeolocation(success) {
+//   navigator.geolocation.getCurrentPosition((data) => {
+//     if (data) {
+//       const { latitude: lat, longitude: long } = data.coords;
+//       success({ lat, long });
+//     } else {
+//       console.error('위치 서비스 동의 하세요');
+//     }
+//   });
+// }
 
 getGeolocation((data) => {
   console.log(data);
